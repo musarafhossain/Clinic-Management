@@ -1,8 +1,11 @@
 import { UserModel } from '../models/index.js';
+import bcrypt from 'bcrypt';
 
 const createUser = async (req, res, next) => {
     try {
         const userData = req.body;
+        const hashedPassword = await bcrypt.hash(userData.password, 10);
+        userData.password = hashedPassword;
         const newUser = await UserModel.createUser(userData);
         res.status(201).json({
             success: true,
@@ -52,6 +55,8 @@ const updateUserById = async (req, res, next) => {
     try {
         const userId = req.params.id;
         const userData = req.body;
+        const hashedPassword = await bcrypt.hash(userData.password, 10);
+        userData.password = hashedPassword;
         const updatedUser = await UserModel.updateUserById(userId, userData);
         res.status(200).json({
             success: true,
