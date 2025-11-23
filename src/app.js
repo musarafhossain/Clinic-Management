@@ -1,9 +1,10 @@
 import express from 'express';
-import { UserRoutes } from './routes/index.js';
+import { UserRoutes, AuthRoutes } from './routes/index.js';
 
 const app = express();
 
 app.use(express.json());
+app.use('/api/auth', AuthRoutes);
 app.use('/api', UserRoutes);
 app.all('/', (req, res) => {
   res.json({ message: 'Server is running' });
