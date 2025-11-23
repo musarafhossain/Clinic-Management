@@ -16,6 +16,10 @@ const login = async (req, res, next) => {
 
         const { jwtToken } = await generateJwtToken(user);
 
+        if (user && user.password) {
+            delete user.password;
+        }
+
         res.status(200).json({
             success: true,
             message: 'Login successful',
