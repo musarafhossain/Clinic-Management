@@ -12,6 +12,6 @@ export const Config: ConfigValue = {
     NAME: 'Phisiotherapy',
   },
   API: {
-    URL: process.env.NEXT_PUBLIC_API_URL!
+    URL: 'http://localhost:3001/api'
   }
 };
