@@ -12,6 +12,6 @@ export const Config: ConfigValue = {
     NAME: 'Phisiotherapy',
   },
   API: {
-    URL: 'http://localhost:3001/api'
+    URL: 'https://backend.musaraf.org.in/api'
   }
 };
