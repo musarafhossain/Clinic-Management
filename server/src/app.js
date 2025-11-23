@@ -6,8 +6,7 @@ const app = express();
 
 const corsOptions = {
   origin: [
-    'https://attendace-app.vercel.app',
-    'https://coochbeharcollegeattendance.netlify.app',
+    'https://musaraf.org.in/',
     'http://localhost:3000'
   ],
   credentials: true,
