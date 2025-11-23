@@ -72,6 +72,10 @@ const getUserById = async (req, res, next) => {
             });
         }
 
+        if (user && user.password) {
+            delete user.password;
+        }
+
         res.status(200).json({
             success: true,
             data: user,
